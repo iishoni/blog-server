@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: @project.artifactId@@env@
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql.iishoni.com/blog?useUnicode=true&characterEncoding=utf8&useTimezone=true&serverTimezone=CTT&useSSL=false&allowMultiQueries=true
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+
+beetlsql:
+#  sqlPath: /sql
+#  dev: true
+  daoSuffix: Mapper
+  basePackage: com.iishoni.blogserver.mapper
