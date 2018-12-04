@@ -39,20 +39,14 @@ public class ArticleService {
     /**
      * 修改文章内容
      */
-    public void updateArticle(Long articleId, String content) {
-        articleMapper.updateTemplateById(Article.builder()
-                .id(articleId)
-                .content(content)
-                .build());
+    public void updateArticle(Article article) {
+        articleMapper.updateTemplateById(article);
     }
 
     /**
      * 新增文章
      */
-    public void saveArticle(String content) {
-        articleMapper.updateTemplateById(Article.builder()
-                .content(content)
-                .publishTime(new Date())
-                .build());
+    public void saveArticle(Article article) {
+        articleMapper.insertTemplate(article, true);
     }
 }

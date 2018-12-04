@@ -36,15 +36,17 @@ public class ArticleController {
         return new ResponseVo<>(result);
     }
 
-    @PutMapping("/{articleId}")
-    public ResponseVo updateArticle(@PathVariable Long articleId, @RequestBody String content) {
-        articleService.updateArticle(articleId, content);
+    @PostMapping("")
+    public ResponseVo saveArticle(@RequestBody Article article) {
+        articleService.saveArticle(article);
         return new ResponseVo<>();
     }
 
-    @PostMapping("")
-    public ResponseVo saveArticle(@RequestBody String content) {
-        articleService.saveArticle(content);
+    @PutMapping("/{articleId}")
+    public ResponseVo updateArticle(@PathVariable Long articleId, @RequestBody Article article) {
+        article.setId(articleId);
+        articleService.updateArticle(article);
         return new ResponseVo<>();
     }
+
 }
