@@ -7,6 +7,8 @@ import com.iishoni.web.view.Page;
 import org.beetl.sql.core.engine.PageQuery;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 import javax.annotation.Resource;
 
 import lombok.extern.slf4j.Slf4j;
@@ -32,5 +34,25 @@ public class ArticleService {
      */
     public Article getArticleById(Long articleId) {
         return articleMapper.single(articleId);
+    }
+
+    /**
+     * 修改文章内容
+     */
+    public void updateArticle(Long articleId, String content) {
+        articleMapper.updateTemplateById(Article.builder()
+                .id(articleId)
+                .content(content)
+                .build());
+    }
+
+    /**
+     * 新增文章
+     */
+    public void saveArticle(String content) {
+        articleMapper.updateTemplateById(Article.builder()
+                .content(content)
+                .publishTime(new Date())
+                .build());
     }
 }
