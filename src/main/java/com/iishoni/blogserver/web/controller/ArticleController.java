@@ -1,4 +1,4 @@
-package com.iishoni.blogserver.controller;
+package com.iishoni.blogserver.web.controller;
 
 import com.iishoni.blogserver.model.Article;
 import com.iishoni.blogserver.service.ArticleService;
@@ -25,7 +25,7 @@ public class ArticleController {
 
     @GetMapping("")
     public ResponseVo<Page<Article>> getArticleByPage(@RequestParam Long pageNum) {
-        Integer pageSize = 9;
+        int pageSize = 100;
         Page<Article> result = articleService.getArticleByPage(pageNum, pageSize);
         return new ResponseVo<>(result);
     }

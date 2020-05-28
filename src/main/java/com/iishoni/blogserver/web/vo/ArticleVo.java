@@ -1,4 +1,4 @@
-package com.iishoni.blogserver.vo;
+package com.iishoni.blogserver.web.vo;
 
 import java.util.List;
 

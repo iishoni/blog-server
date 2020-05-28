@@ -1,4 +1,4 @@
-package com.iishoni.blogserver.controller;
+package com.iishoni.blogserver.web.controller;
 
 import com.iishoni.blogserver.model.Tag;
 import com.iishoni.blogserver.service.TagService;

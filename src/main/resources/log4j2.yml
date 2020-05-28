@@ -6,8 +6,8 @@ Configuration:
       - name: log.level
         value: debug
       - name: log.path
-#        value: /app/cloud/logs/
-        value: /Users/dxk/Documents/logs/
+        value: /app/cloud/logs/
+#        value: /Users/dxk/Documents/logs/
       - name: project.name
         value: blog-server
       - name: log.pattern
