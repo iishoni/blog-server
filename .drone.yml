@@ -22,4 +22,3 @@ pipeline:
       - sh /data/shell/setup.sh blog-server 8080
 
 branches: master
-
